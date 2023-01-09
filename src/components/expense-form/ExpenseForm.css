@@ -1,0 +1,16 @@
+.top-inputs{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dateInput{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.formButtons{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}

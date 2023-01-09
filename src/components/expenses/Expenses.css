@@ -1,0 +1,15 @@
+.expensesList {
+    padding: 20px ;
+    border: 1pz solid violet;
+    border-radius: 15px;
+    width: 55%;
+    margin: 0 auto;
+    background-color: black;
+    margin-top: 2rem;
+}
+.expensesList > div{
+    background-color:dimgrey ;
+    color: white;
+}
+
+
