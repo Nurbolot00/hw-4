@@ -55,7 +55,6 @@ function App() {
     updatedExpenses.push(data)
     setExpenses(updatedExpenses)
   }
-  console.log("121221");
 
   return (
     <div className="App">

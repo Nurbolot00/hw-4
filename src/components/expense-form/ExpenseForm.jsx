@@ -87,12 +87,6 @@ export const ExpenseForm = (props) => {
         <Button title="Отмена" onClick={cancelHanlder} />
         <Button title="Сохранить" onClick={SaveHandler} disabled={!enabled} />
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
-        voluptatem sequi incidunt excepturi quaerat dolor provident vero
-        necessitatibus ea, delectus, tempora molestiae atque cum facere
-        laudantium beatae expedita maiores porro.
-      </p>
     </form>
   );
 };
