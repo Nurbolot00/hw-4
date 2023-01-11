@@ -5,47 +5,42 @@ import { Expenses } from './components/expenses/Expenses';
 import { NewExpense } from './components/new-expense/NewExpense';
 
 
-// const expenses =[
-//   {
-//     title:"Туалетная бумага",
-//     price: "300 som",
-//     date: new Date()
-//   },
-//   {
-//     title:"Туалетная бумага",
-//     price: "300 som",
-//     date: new Date()
-//   },
-//   {
-//     title:"Туалетная бумага",
-//     price: "300 som",
-//     date: new Date()
-//   },
-//   {
-//     title:"Туалетная бумага",
-//     price: "300 som",
-//     date: new Date()
-//   },
-// ]
-
-
-
 function App() {
   const [expenses,setExpenses] = useState([
     {
       title:"Телевизор",
-      price: "30000",
-      date: new Date()
+      price: 300,
+      date: new Date(2022,3,9)
     },
     {
       title:"Туалетная бумага",
-      price: "150",
-      date: new Date()
+      price: 150,
+      date: new Date(2023,5,19)
     },
     {
       title:"Телефон",
-      price: "20000",
-      date: new Date()
+      price: 200,
+      date: new Date(2021,8,5)
+    },
+    {
+      title:"Тапки",
+      price: 600,
+      date: new Date(2020,2,11)
+    },
+    {
+      title:"Одежда",
+      price: 1000,
+      date: new Date(2022,4,6)
+    },
+    {
+      title:"Кварт-плата",
+      price: 500,
+      date: new Date(2021,1,7)
+    },
+    {
+      title:"Наушники",
+      price: 400,
+      date: new Date(2019,5,24)
     },
     
   ])
