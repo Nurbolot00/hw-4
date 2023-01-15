@@ -2,7 +2,23 @@ import React from "react";
 import { useState } from "react";
 import Button from "../UI/button/Button";
 import FormInput from "../UI/form-input/FormInput";
-import "./ExpenseForm.css";
+import styled from 'styled-components'
+
+
+ const TopInputsContainer = styled.div`
+ display: flex;
+ flex-wrap: wrap;
+ `
+ const DateInputContainer = styled.div`
+ width: 50%;
+ display: flex;
+ flex-wrap: wrap;
+ `
+ const FormButtonsContainer = styled.div`
+ display: flex;
+ justify-content: flex-end;
+ flex-wrap: wrap;
+ `
 
 export const ExpenseForm = (props) => {
   const [title, setTitle] = useState("");
@@ -17,33 +33,27 @@ export const ExpenseForm = (props) => {
   };
 
   const priceInputChangeHandler = (event) => {
-    // console.log(event.target.value);
-
     const value = event.target.value;
     if (value.charAt(0) !== "-") setPrice(event.target.value); // 'e'
   };
 
   const titleInputChangeHandler = (event) => {
-    // console.log(event.target.value);
     setTitle(event.target.value); // 'e'
   };
 
   const dateInputChangeHandler = (event) => {
-    // console.log(event.target.value);
     setDate(event.target.value); // 'e'
   };
 
   const SaveHandler = (event) => {
     event.preventDefault();
-    // const titleInput = document.getElementById("name")
-    // const priceInput = document.getElementById("price")
-    // const dateInput = document.getElementById("date")
+
     const expenseData = {
       title,
       date,
       price,
     };
-    // console.log(expenseData);
+
 
     props.onNewExpenseAdd(expenseData);
 
@@ -54,7 +64,7 @@ export const ExpenseForm = (props) => {
 
   return (
     <form className="newExpenseForm" action="">
-      <div className="top-inputs">
+      <TopInputsContainer>
         <FormInput
           onChange={titleInputChangeHandler}
           value={title}
@@ -72,8 +82,9 @@ export const ExpenseForm = (props) => {
           inputType="number"
           placeholder="Введите сумму"
         />
-      </div>
-      <div className="dateInput">
+      </TopInputsContainer>
+
+      <DateInputContainer>
         <FormInput
           onChange={dateInputChangeHandler}
           value={date}
@@ -82,11 +93,12 @@ export const ExpenseForm = (props) => {
           inputType="date"
           placeholder="дд.мм.гггг"
         />
-      </div>
-      <div className="formButtons">
+      </DateInputContainer>
+      
+      <FormButtonsContainer>
         <Button title="Отмена" onClick={cancelHanlder} />
         <Button title="Сохранить" onClick={SaveHandler} disabled={!enabled} />
-      </div>
+      </FormButtonsContainer>
     </form>
   );
 };

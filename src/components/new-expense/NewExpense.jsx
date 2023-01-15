@@ -2,7 +2,17 @@ import React from 'react';
 import { useState } from 'react';
 import { ExpenseForm } from '../expense-form/ExpenseForm';
 import Button from '../UI/button/Button';
-import "./NewExpense.css"
+import styled from 'styled-components'
+
+const NewExpenseContainer = styled.div`
+border-radius: 10px;
+padding: 30px;
+background-color: #AD9BE9;
+width: 50%;
+margin:  0 auto;
+margin-top: 1rem;
+margin-bottom: 2rem;
+`
 
 
 export  const NewExpense = ({onNewExpenseAdd}) => {
@@ -20,9 +30,9 @@ export  const NewExpense = ({onNewExpenseAdd}) => {
 
 
     return (
-        <div className='newExpense'>
+        <NewExpenseContainer>
             { showForm ? <ExpenseForm onNewExpenseAdd={onNewExpenseAdd} onShowForm = {showExpenseForm}/> : <Button title="Добавить новый расход" onClick={showExpenseForm} />}
-        </div>
+        </NewExpenseContainer>
     );
 };
 

@@ -1,16 +1,52 @@
 import React from 'react';
-import "./ExpenseItem.css"
+import styled from 'styled-components'
+
+const ExpenseItemContainer = styled.div`
+    border-radius: 10px;
+    background-color: dimgrey;
+    display: flex;
+    margin:  0 auto;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 10px;
+    color: white;
+`
+
+const ItemDate = styled.p`
+width: 15%;
+border: 1px solid white;
+border-radius: 10px;
+margin: 1rem;
+background-color: black;
+padding: 5px;
+`
+
+const ItemTitle = styled.p`
+width: 65%;
+display: flex;
+font-size: 22px;
+`
+
+const ItemPrice = styled.p`
+width: 15%;
+border: 1px solid white;
+padding: 10px;
+margin: 1rem;
+border-radius: 10px;
+background-color: #4A016B;
+font-weight: 700;
+font-size: 18px;
+`
+
 
  export const ExpenseItem = ({date,title,price}) => {
+    
 
     return (
-        <div className='expenseItem'>
-            
-                 <p className='item-date'>{date.toString()}</p>
-                 <p className='item-title'>{title}</p>
-                  <p className='item-price'>{price} som</p>
-            
-
-        </div>
+        <ExpenseItemContainer>           
+                 <ItemDate>{date.toString()}</ItemDate>
+                 <ItemTitle>{title}</ItemTitle>
+                  <ItemPrice>{price} som</ItemPrice>
+        </ExpenseItemContainer>
     );
 };
